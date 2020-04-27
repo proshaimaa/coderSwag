@@ -1,7 +1,8 @@
-package com.shaimaa.coderswag
+package com.shaimaa.coderswag.controller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.shaimaa.coderswag.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -9,6 +10,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var sh = "shaimaa"
     }
 }
