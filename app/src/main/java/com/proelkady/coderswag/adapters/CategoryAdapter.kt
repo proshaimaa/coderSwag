@@ -22,7 +22,6 @@ class CategoryAdapter (context: Context, categories: List<Category>) : BaseAdapt
             categoryView = LayoutInflater.from(context).inflate(R.layout.category_list_item, null)
             val categoryImage : ImageView = categoryView.findViewById(R.id.categoryImage)
             val categoryName : TextView = categoryView.findViewById(R.id.categoryName)
-            println("Heavy Computing")
 
             val category = categories[position]
 
