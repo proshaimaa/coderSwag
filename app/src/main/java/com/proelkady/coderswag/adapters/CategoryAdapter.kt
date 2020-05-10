@@ -18,6 +18,7 @@ class CategoryAdapter (context: Context, categories: List<Category>) : BaseAdapt
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             val categoryView: View
+            val holder : ViewHolder
 
             categoryView = LayoutInflater.from(context).inflate(R.layout.category_list_item, null)
             val categoryImage : ImageView = categoryView.findViewById(R.id.categoryImage)
@@ -43,4 +44,9 @@ class CategoryAdapter (context: Context, categories: List<Category>) : BaseAdapt
         override fun getCount(): Int {
             return categories.count()
         }
+
+    private class ViewHolder{
+        var categoryImage : ImageView? = null
+        var categoryName : TextView? = null
+    }
 }
