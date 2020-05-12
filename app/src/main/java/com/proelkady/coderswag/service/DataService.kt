@@ -54,17 +54,17 @@ object DataService {
         Product("Devslopes Badge Light Gray", "$20", "shirt2"),
         Product("Devslopes Logo Shirt Red", "$22", "shirt3"),
         Product("Devslopes Hustle", "$22", "shirt4"),
-        Product("Kickflip Studios", "18", "shirt5"),
+        Product("Kickflip Studios", "$18", "shirt5"),
         Product("Devslopes Shirt Black", "$18", "shirt1"),
         Product("Devslopes Badge Light Gray", "$20", "shirt2"),
         Product("Devslopes Logo Shirt Red", "$22", "shirt3"),
         Product("Devslopes Hustle", "$22", "shirt4"),
-        Product("Kickflip Studios", "18", "shirt5"),
+        Product("Kickflip Studios", "$18", "shirt5"),
         Product("Devslopes Shirt Black", "$18", "shirt1"),
         Product("Devslopes Badge Light Gray", "$20", "shirt2"),
         Product("Devslopes Logo Shirt Red", "$22", "shirt3"),
         Product("Devslopes Hustle", "$22", "shirt4"),
-        Product("Kickflip Studios", "18", "shirt5")
+        Product("Kickflip Studios", "$18", "shirt5")
     )
 
     val digitalGoods = listOf<Product>()
