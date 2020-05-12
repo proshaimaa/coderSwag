@@ -9,6 +9,7 @@ import com.proelkady.coderswag.R
 import com.proelkady.coderswag.adapters.ProductAdapter
 import com.proelkady.coderswag.service.DataService
 import com.proelkady.coderswag.utilities.EXTRA_CATEGORY
+import com.proelkady.coderswag.utilities.EXTRA_PRODUCT
 import kotlinx.android.synthetic.main.activity_product.*
 
 class ProductActivity : AppCompatActivity() {
@@ -20,7 +21,13 @@ class ProductActivity : AppCompatActivity() {
         setContentView(R.layout.activity_product)
 
         val categoryType = intent.getStringExtra(EXTRA_CATEGORY)
-        adapter = ProductAdapter(this,DataService.getProducts(categoryType))
+
+        adapter = ProductAdapter(this,DataService.getProducts(categoryType)){product ->
+                val productIntent = Intent(this,ProductDetailActivity::class.java)
+                productIntent.putExtra(EXTRA_PRODUCT,product)
+                startActivity(productIntent)
+
+        }
 
         var spanCount = 2
         val orientation = resources.configuration.orientation

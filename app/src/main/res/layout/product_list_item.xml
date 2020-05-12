@@ -10,7 +10,7 @@
     android:layout_marginBottom="8dp">
 
     <ImageView
-        android:id="@+id/productImage"
+        android:id="@+id/detailImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -23,7 +23,7 @@
         app:srcCompat="@drawable/hat1" />
 
     <TextView
-        android:id="@+id/productName"
+        android:id="@+id/detailName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -31,11 +31,11 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productImage"
+        app:layout_constraintTop_toBottomOf="@+id/detailImage"
         tools:text="Beanie" />
 
     <TextView
-        android:id="@+id/productPrice"
+        android:id="@+id/detailPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -45,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productName"
+        app:layout_constraintTop_toBottomOf="@+id/detailName"
         app:layout_constraintVertical_bias="0.0"
         tools:text="$18" />
 </androidx.constraintlayout.widget.ConstraintLayout>

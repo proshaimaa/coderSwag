@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.proelkady.coderswag.R
 import com.proelkady.coderswag.model.Product
 
-class ProductAdapter(val context: Context,val products : List<Product>) : RecyclerView.Adapter<ProductAdapter.ProductHolder>() {
+class ProductAdapter(val context: Context,val products : List<Product>, val itemClick: (Product) -> Unit ) : RecyclerView.Adapter<ProductAdapter.ProductHolder>() {
 
-    inner class ProductHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class ProductHolder(itemView: View,itemClick: (Product) -> Unit) : RecyclerView.ViewHolder(itemView){
 
-        val productImage = itemView?.findViewById<ImageView>(R.id.productImage)
-        val productName = itemView?.findViewById<TextView>(R.id.productName)
-        val productPrice = itemView?.findViewById<TextView>(R.id.productPrice)
+        val productImage = itemView.findViewById<ImageView>(R.id.detailImage)
+        val productName = itemView.findViewById<TextView>(R.id.detailName)
+        val productPrice = itemView.findViewById<TextView>(R.id.detailPrice)
 
         fun bindProduct(product : Product, context : Context){
 
@@ -24,13 +24,14 @@ class ProductAdapter(val context: Context,val products : List<Product>) : Recycl
             productImage?.setImageResource(resourceId)
             productName?.text = product.title
             productPrice?.text = product.price
+            itemView.setOnClickListener { itemClick (product) }
 
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.product_list_item,parent,false)
-        return ProductHolder(view)
+        return ProductHolder(view,itemClick)
     }
 
     override fun getItemCount(): Int {
@@ -38,6 +39,6 @@ class ProductAdapter(val context: Context,val products : List<Product>) : Recycl
     }
 
     override fun onBindViewHolder(holder: ProductHolder, position: Int) {
-        holder?.bindProduct(products[position],context)
+        holder.bindProduct(products[position],context)
     }
 }
